@@ -60,6 +60,7 @@ function start_blockchain_peer {
         -X POST \
         -H 'Accept: application/json' \
         -u ${BLOCKCHAIN_KEY}:${BLOCKCHAIN_SECRET} \
+        -k \
         ${BLOCKCHAIN_URL}/api/v1/networks/${BLOCKCHAIN_NETWORK_ID}/nodes/${PEER}/start
     wait_for_peer_to_start ${PEER}
 }
@@ -81,6 +82,7 @@ function stop_blockchain_peer {
         -X POST \
         -H 'Accept: application/json' \
         -u ${BLOCKCHAIN_KEY}:${BLOCKCHAIN_SECRET} \
+        -k \
         ${BLOCKCHAIN_URL}/api/v1/networks/${BLOCKCHAIN_NETWORK_ID}/nodes/${PEER}/stop
     wait_for_peer_to_stop ${PEER}
 }
@@ -125,6 +127,7 @@ function sync_channel_certs {
         -X POST \
         -H 'Accept: application/json' \
         -u ${BLOCKCHAIN_KEY}:${BLOCKCHAIN_SECRET} \
+        -k \
         ${BLOCKCHAIN_URL}/api/v1/networks/${BLOCKCHAIN_NETWORK_ID}/channels/${CHANNEL}/sync
 }
 
