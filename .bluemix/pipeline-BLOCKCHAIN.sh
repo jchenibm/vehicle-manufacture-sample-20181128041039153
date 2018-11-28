@@ -114,6 +114,7 @@ EOF
         -H 'Accept: application/json' \
         -u ${BLOCKCHAIN_KEY}:${BLOCKCHAIN_SECRET} \
         --data-binary @request.json \
+        -k \
         ${BLOCKCHAIN_URL}/api/v1/networks/${BLOCKCHAIN_NETWORK_ID}/certificates
     rm -f request.json
 }
